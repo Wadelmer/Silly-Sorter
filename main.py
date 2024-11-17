@@ -1,29 +1,24 @@
-input_dict = {}
+import operator
 
-while True:
-    insert = input()
-    if insert == '-s':
-        break
-    elif insert == '':
-        pass
-    else:
-        while True:
-            value = input()
-            if value != '':
-                if value.isdecimal():
-                    value = int(value)
-                    input_dict[insert] = value
-                    print(input_dict)
-                    break
-                elif value == '-s':
-                    break
-                else:
-                    print("The value must be a decimal!")
+def evaluate(keys, values, operation, condition):
+    operators = {">": operator.gt, "<": operator.lt}
+    sortedata = []
 
-chosen_opt = input("Options:\n0 -> From largest to smallest\n(Use 1 instead for the opposite option)\n\n2 -> Sort from range\n\n")
-if chosen_opt == '0':
-    print(dict(sorted(input_dict.items())))
-elif chosen_opt == '1':
-    print(dict(sorted(input_dict.items(), reverse=True)))
+    for i in range(len(values)):
+        if operators[operation](int(values[i]), int(condition)):
+            sortedata.append((keys[i], values[i]))
+    
+    print("------------------------------")
+    for i in range(len(sortedata)):
+        print(f"{sortedata[i][0]}:{sortedata[i][1]:>10}")
+    print("------------------------------")
+    print(f"Size of sorted data: {len(sortedata)}")
 
-    # Sort doesn't want to work, I will fix it later when I feel like it lol
+if __name__ == "__main__":
+    keys = input("Enter keys separated by spaces: ").split()
+    values = []
+    while len(values) != len(keys):
+        values = input("Enter values separated by spaces: ").split()
+    op = input("Enter operation (> or <): ")
+    cond = input("Enter condition: ")
+    evaluate(keys, values, op, cond)
