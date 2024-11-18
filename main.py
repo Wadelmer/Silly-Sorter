@@ -22,8 +22,8 @@ while True:
 
 chosen_opt = input("Options:\n0 -> From largest to smallest\n(Use 1 instead for the opposite option)\n\n2 -> Sort from range\n\n")
 if chosen_opt == '0':
-    print(dict(sorted(input_dict.items())))
+    print(sorted(input_dict.items()))
 elif chosen_opt == '1':
-    print(dict(sorted(input_dict.items(), reverse=True)))
+    print(sorted(input_dict.items(), reverse=True))
 
     # Sort doesn't want to work, I will fix it later when I feel like it lol
