@@ -1,29 +1,20 @@
+import os
+
 input_dict = {}
 
+key_len = 0
 while True:
-    insert = input()
-    if insert == '-s':
-        break
-    elif insert == '':
-        pass
-    else:
-        while True:
-            value = input()
-            if value != '':
-                if value.isdecimal():
-                    value = int(value)
-                    input_dict[insert] = value
-                    print(input_dict)
-                    break
-                elif value == '-s':
-                    break
-                else:
-                    print("The value must be a decimal!")
+    os.system('clear') # This function is used to clear the terminal.
+    for i, v in input_dict.items():
+        print(f"{i:{key_len}<}:{v:>10}") # For loop that prints current keys and values in the dictionary.
+    key = input()
+    if key == '':
+        break # If your input is empty, the program will assume you want to stop.
+    key_len = max(len(key), key_len) # Getting the maximum length of the keys so the print looks consistent.
+    value = input()
+    try:
+        input_dict[key] = float(value) # This line tries to convert a string to a float, if it's not possible...
+    except ValueError:
+        print("That's not a number!") # It notifies you!
 
-chosen_opt = input("Options:\n0 -> From largest to smallest\n(Use 1 instead for the opposite option)\n\n2 -> Sort from range\n\n")
-if chosen_opt == '0':
-    print(sorted(input_dict.items()))
-elif chosen_opt == '1':
-    print(sorted(input_dict.items(), reverse=True))
-
-    # Sort doesn't want to work, I will fix it later when I feel like it lol
+# sorted(input_dict.items(), reverse=True)
