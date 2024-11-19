@@ -18,7 +18,7 @@ def collectdata():
             input_dict[key] = float(value)   # This line tries to convert a string to a float, if it's not possible...
         except ValueError:
             print("That's not a number!")    # It notifies you!
-            time.sleep(1)
+            time.sleep(1)                    # Delay so you can actually see it
     return input_dict, key_len               # Return collected dictionary and largest key length
 
 def filter(input_dict, key_len):
@@ -35,6 +35,10 @@ def filter(input_dict, key_len):
 
     operators = {">": operator.gt, "<": operator.lt, ">=": operator.ge, "<=": operator.le} # String-operator look-up dictionary
     filteredata = {}
+    if (op == '<') or (op == '<='):
+        input_dict = dict(sorted(input_dict.items(), key=operator.itemgetter(1), reverse=True)) # Sorting the values depending on their selected...
+    else:
+        input_dict = dict(sorted(input_dict.items(), key=operator.itemgetter(1))) # operator, making sure to get the second value to make use of sorted()
     for i, v in input_dict.items():         # For each item in dictionary
         if operators[op](v, float(cond)):   # Check if item value complies with specified operation and condition
             filteredata[i] = v              # Append item-value pair to filtered data if so
