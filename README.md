@@ -1,67 +1,69 @@
 # Silly-Sorter
 Silly sorter made by the TWENTY team.
 
-## Descripción
-Este programa interactivo en Python permite al usuario crear un diccionario de datos con claves y valores numéricos. Una vez creados, se pueden filtrar y ordenar los datos según diferentes condiciones. Es útil para explorar datos pequeños de manera rápida y organizada.
+## Description  
+This interactive Python program allows the user to create a dictionary of data with numeric keys and values. Once created, the data can be filtered and sorted based on different conditions. It is useful for quickly and efficiently exploring small datasets.  
 
-## Características
-Recopilación de pares clave-valor.
-Validación de entradas para asegurar que los valores sean numéricos.
-Filtrado de datos con operadores comparativos (>, >=, <, <=).
+## Features  
+- Collection of key-value pairs.  
+- Input validation to ensure values are numeric.  
+- Filtering of data using comparative operators (>, >=, <, <=).  
 
-## Cómo usar el programa
-### Introduce los datos:
+## How to Use the Program  
+### Input the Data:  
+1. Enter a key (any text).  
+2. Enter an associated numeric value.  
+3. Repeat the process to add more data.  
+4. Leave the key field empty and press Enter to finish.  
 
- 1 Escribe una clave (cualquier texto).
- 
- 2 Introduce un valor numérico asociado.
- 
- 3 Repite el proceso para agregar más datos.
- 
- 4 Deja el campo de la clave vacío y presiona Enter para finalizar.
+### Filter the Data:  
+#### Specify a comparison operator:  
+##### >: Greater than  
+##### >=: Greater than or equal to  
+##### <: Less than  
+##### <=: Less than or equal to  
+#### Enter a numeric value as a condition.  
+#### The program will display the data that meets the condition, sorted according to the operator.  
 
-### Filtra los datos:
+### Result:  
+The filtered data will be displayed in a tabular format along with the size of the filtered dataset.  
 
-#### Especifica un operador de comparación:
-##### >: Mayor que
-##### >=: Mayor o igual que
-##### <: Menor que
-##### <=: Menor o igual que
-#### Introduce un valor numérico como condición.
-#### El programa mostrará los datos que cumplen la condición, ordenados según el operador.
+## Example  
+### Input:  
 
-### Resultado:
-Los datos filtrados se mostrarán en un formato tabular junto con el tamaño del conjunto filtrado.
+Insert key: A  
 
-## Ejemplo
-### Entrada:
-Insert key: A
-Insert value: 5
-Insert key: B
-Insert value: 10
-Insert key: C
-Insert value: 3
-Insert key:
+Insert value: 5  
 
-### Filtro:
-Enter operation (>, >= or <, <=): >
+Insert key: B  
 
-Enter condition: 4
+Insert value: 10  
 
-### Salida:
+Insert key: C  
 
-------------
+Insert value: 3  
 
-A         :       5.0
+Insert key:  
 
-B         :      10.0
+### Filter:  
+Enter operation (>, >= or <, <=): >  
 
-------------
+Enter condition: 4  
 
-Size of filtered data: 2
+### Output:  
 
-Showing values > than 4
+------------ 
 
-## Notas
-Si introduces un valor no numérico, el programa mostrará un mensaje de error y pedirá que vuelvas a intentarlo.
-Puedes reiniciar el proceso de filtrado en caso de cometer un error en la entrada.
+A         :       5.0  
+
+B         :      10.0  
+
+------------  
+
+Size of filtered data: 2  
+
+Showing values > than 4  
+
+## Notes  
+- If you enter a non-numeric value, the program will display an error message and prompt you to try again.  
+- You can restart the filtering process if you make a mistake in the input.  
