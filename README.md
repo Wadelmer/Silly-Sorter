@@ -31,38 +31,50 @@ The filtered data will be displayed in a tabular format along with the size of t
 ## Example  
 ### Input:  
 
-Insert key: A  
-
-Insert value: 5  
-
-Insert key: B  
-
-Insert value: 10  
-
-Insert key: C  
-
+Insert key: Juan  
+Insert value: 7  
+Insert key: María  
+Insert value: 4  
+Insert key: Pedro  
+Insert value: 6  
+Insert key: Ana  
 Insert value: 3  
-
 Insert key:  
 
 ### Filter:  
-Enter operation (>, >= or <, <=): >  
+Enter operation (>, >= or <, <=): >=  
 
-Enter condition: 4  
+Enter condition: 5  
 
 ### Output:  
 
------------- 
+------------  
 
-A         :       5.0  
+Juan      :       7.0  
 
-B         :      10.0  
+Pedro     :       6.0  
+
+------------  
+Size of filtered data: 2  
+
+Showing values >= than 5  
+
+### Another Filter:  
+Enter operation (>, >= or <, <=): <  
+
+Enter condition: 5  
+
+### Output:  
 
 ------------  
 
-Size of filtered data: 2  
+María     :       4.0  
 
-Showing values > than 4  
+Ana       :       3.0  
+
+------------  
+Size of filtered data: 2  
+Showing values < than 5 
 
 ## Notes  
 - If you enter a non-numeric value, the program will display an error message and prompt you to try again.  
