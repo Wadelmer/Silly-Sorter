@@ -6,7 +6,7 @@ def collectdata():
     key_len = 0
     input_dict = {}
     while True:
-        os.system('clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
         for i, v in input_dict.items():
             print(f"{i:{key_len}}:{v:>10}")  # For loop that prints current keys and values in the dictionary.
         key = input("\nInsert key: ")
@@ -22,7 +22,7 @@ def collectdata():
     return input_dict, key_len               # Return collected dictionary and largest key length
 
 def filter(input_dict, key_len):
-    os.system('clear')
+    os.system('cls' if os.name == 'nt' else 'clear')
     op = input("Enter operation (>, >= or <, <=): ")
     if (op != '>') and (op != '>=') and (op != '<') and (op != '<='):
         return filter(input_dict, key_len)
